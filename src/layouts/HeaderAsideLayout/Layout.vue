@@ -1,7 +1,7 @@
 <template>
   <div class="app-wrapper">
-    <side-bar class="sidebar-container" />
-    <div class="main-container">
+    <side-bar class="sidebar-container" @close="closeSide" v-if="!sideClosed"/>
+    <div class="main-container" :style="{'margin-left': sideClosed ? '0' : '256px'}">
       <nav-bar />
       <app-main />
     </div>
@@ -18,6 +18,16 @@ export default {
     SideBar,
     AppMain,
   },
+  data(){
+    return {
+      sideClosed: false
+    }
+  },
+  methods: {
+    closeSide(){
+      
+    }
+  }
 };
 </script>
 
@@ -36,7 +46,6 @@ export default {
 .main-container {
   min-height: 100vh;
   transition: margin-left 0.28s;
-  margin-left: 256px;
   background-color: #f0f2f5;
 }
 </style>

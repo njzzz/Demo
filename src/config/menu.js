@@ -11,10 +11,6 @@ const asideMenuConfig = [
     icon: 'el-icon-menu',
     children: [
       {
-        path: '/login',
-        name: '登录注册',
-      },
-      {
         path: '/manage',
         name: '客户管理中心',
       },

@@ -8,6 +8,7 @@
     </div>
     <el-menu
       :show-timeout="200"
+      :collapse="isCollapse"
       mode="vertical"
       background-color="#00142a"
       text-color="hsla(0, 0%, 100%, .65)"
@@ -70,6 +71,7 @@ export default {
   data() {
     return {
       asideMenuConfig,
+      isCollapse: false
     };
   },
 };
