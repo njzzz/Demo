@@ -3,24 +3,39 @@
     <!-- 使用方法请参考文档和示例 -->
     <!-- 文档： https://d2-projects.github.io/d2-admin-doc/zh/ecosystem-d2-crud/ -->
     <!-- 示例： https://d2-projects.github.io/d2-admin/#/demo/d2-crud/index -->
+    <el-form :inline="true" :model="formInline"  :style="{marginTop: '30px', marginLeft: '20px'}">
+      <el-form-item label="审批人">
+        <el-input v-model="formInline.user" placeholder="审批人"></el-input>
+      </el-form-item>
+      <el-form-item label="活动区域">
+        <el-select v-model="formInline.region" placeholder="活动区域">
+          <el-option label="区域一" value="shanghai"></el-option>
+          <el-option label="区域二" value="beijing"></el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="onSubmit">查询</el-button>
+      </el-form-item>
+    </el-form>
     <d2-crud
       ref="d2Crud"
       :columns="columns"
       :data="data"
       title="D2 CRUD"
-      selection-row
       index-row
       add-mode
       :add-button="addButton"
       :rowHandle="rowHandle"
       :form-template="formTemplate"
+      :edit-template="formTemplate"
       :form-rules="formRules"
       :form-options="formOptions"
       @row-add="handleRowAdd"
       @row-edit="handleRowEdit"
       @row-remove="handleRowRemove"
       @dialog-cancel="handleDialogCancel"
-      @selection-change="handleSelectionChange"/>
+      @selection-change="handleSelectionChange">
+    </d2-crud>
   </div>
 </template>
 
@@ -33,6 +48,10 @@ Vue.use(D2Crud)
 export default {
   data() {
     return {
+      formInline: {
+        user: '',
+        region: ''
+      },
       columns: [
         {
           title: '日期',
@@ -254,6 +273,13 @@ export default {
     }
   },
   methods: {
+    onSubmit() {
+      console.log('submit!');
+      this.$message({
+        message: '查询成功',
+        type: 'success'
+      });
+    },
     handleRowAdd (row, done) {
       this.formOptions.saveLoading = true
       setTimeout(() => {
@@ -299,8 +325,12 @@ export default {
     },
     handleSelectionChange (selection) {
       console.log(selection)
+       
     }
   }
 }
 
 </script>
+<style>
+
+</style>

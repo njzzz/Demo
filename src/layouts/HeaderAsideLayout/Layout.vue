@@ -1,10 +1,16 @@
 <template>
   <div class="app-wrapper">
-    <side-bar class="sidebar-container" @close="closeSide" v-if="!sideClosed"/>
+    <side-bar class="sidebar-container" v-if="!sideClosed"/>
     <div class="main-container" :style="{'margin-left': sideClosed ? '0' : '256px'}">
       <nav-bar />
       <app-main />
     </div>
+    <div 
+    :style="{
+      left: sideClosed ? '-5px' : '253px'
+    }" 
+    class="menu-toggle" 
+    @click="sideClosed=!sideClosed">{{ sideClosed ? '>' : '<' }}</div>
   </div>
 </template>
 
@@ -24,9 +30,7 @@ export default {
     }
   },
   methods: {
-    closeSide(){
-      
-    }
+    
   }
 };
 </script>
@@ -46,6 +50,18 @@ export default {
 .main-container {
   min-height: 100vh;
   transition: margin-left 0.28s;
-  background-color: #f0f2f5;
+}
+.menu-toggle{
+  width: 15px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+  background: rgb(0, 20, 42);
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  cursor: pointer;
+  color: #ffffff;
+  transition: left 0.28s;
 }
 </style>

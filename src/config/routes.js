@@ -2,7 +2,7 @@ import HeaderAsideLayout from '@/layouts/HeaderAsideLayout';
 import NotFound from '@/pages/NotFound';
 import Dashboard from '@/pages/Dashboard';
 import Login from '@/pages/Login';
-import Table from '@/pages/Table';
+import UserAdmin from '@/pages/UserAdmin';
 
 const routerConfig = [
   {
@@ -13,7 +13,7 @@ const routerConfig = [
     path: '/customerManage',
     component: HeaderAsideLayout,
     children: [
-      { path: '/customerManage/manage', component: NotFound },
+      { path: '/customerManage/manage', component: UserAdmin },
     ],
   },
   {

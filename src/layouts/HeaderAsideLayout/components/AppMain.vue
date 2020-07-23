@@ -14,3 +14,8 @@ export default {
   name: 'AppMain',
 };
 </script>
+<style>
+.app-main{
+  margin-left: 30px;
+}
+</style>
