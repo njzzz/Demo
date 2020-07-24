@@ -51,11 +51,11 @@ const asideMenuConfig = [
     children: [
       {
         path: '/customerInfo',
-        name: '客服信息',
+        name: '客户信息',
       },
       {
         path: '/customerStatistics',
-        name: '客服统计',
+        name: '客户统计',
       },
     ],
   },

@@ -3,6 +3,7 @@ import NotFound from '@/pages/NotFound';
 import Dashboard from '@/pages/Dashboard';
 import Login from '@/pages/Login';
 import UserAdmin from '@/pages/UserAdmin';
+import CustomerInfo from '@/pages/CustomerInfo';
 
 const routerConfig = [
   {
@@ -17,10 +18,10 @@ const routerConfig = [
     ],
   },
   {
-    path: '/form',
+    path: '/customerInfoManage',
     component: HeaderAsideLayout,
     children: [
-      { path: '/form/basic', component: NotFound },
+      { path: '/customerInfoManage/customerInfo', component: CustomerInfo },
       { path: '/form/signup', component: NotFound },
     ],
   },
