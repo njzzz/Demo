@@ -2,8 +2,9 @@ import HeaderAsideLayout from '@/layouts/HeaderAsideLayout';
 import NotFound from '@/pages/NotFound';
 import Dashboard from '@/pages/Dashboard';
 import Login from '@/pages/Login';
-import UserAdmin from '@/pages/UserAdmin';
+import CustomerManageAdmin from '@/pages/CustomerManageAdmin';
 import CustomerInfo from '@/pages/CustomerInfo';
+import CustomerStatistics from '@/pages/CustomerStatistics';
 
 const routerConfig = [
   {
@@ -14,7 +15,7 @@ const routerConfig = [
     path: '/customerManage',
     component: HeaderAsideLayout,
     children: [
-      { path: '/customerManage/manage', component: UserAdmin },
+      { path: '/customerManage/manage', component: CustomerManageAdmin },
     ],
   },
   {
@@ -22,16 +23,15 @@ const routerConfig = [
     component: HeaderAsideLayout,
     children: [
       { path: '/customerInfoManage/customerInfo', component: CustomerInfo },
-      { path: '/form/signup', component: NotFound },
+      { path: '/customerInfoManage/customerStatistics', component: CustomerStatistics },
     ],
   },
   {
-    path: '/charts',
+    path: '/userManage',
     component: HeaderAsideLayout,
     children: [
-      { path: '/charts/line', component: NotFound },
-      { path: '/charts/histogram', component: NotFound },
-      { path: '/charts/bar', component: NotFound },
+      { path: '/userManage/userInfo', component: CustomerInfo },
+      { path: '/userManage/userStatistics', component: CustomerStatistics },
     ],
   },
   {

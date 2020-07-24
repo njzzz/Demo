@@ -57,7 +57,7 @@ export default {
   line-height: 40px;
   border-radius: 5px;
   background: rgb(0, 20, 42);
-  position: absolute;
+  position: fixed;
   top: 50%;
   z-index: 1;
   cursor: pointer;

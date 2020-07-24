@@ -1,16 +1,14 @@
 <template>
   <div class="dashboard">
-    <HistogramChart /> 
-    <PieChart />
+    <D2Crud /> 
   </div>
 </template>
 <script>
-import PieChart from './components/PieChart';
-import HistogramChart from './components/HistogramChart';
+import D2Crud from './components/D2Crud/index';
 export default {
   components:{
-    HistogramChart,
-    PieChart
+    D2Crud
+
   }
 }
 </script>
